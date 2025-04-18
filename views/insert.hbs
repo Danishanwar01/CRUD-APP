@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  {{>Header}}
+</head>
+
+<body>
+  {{>Nav}}
+  <div class="container text-danger border border-2 border-dark mt-1">
+    <h4 class="text-center bg-dark text-warning mt-2 p-2">Add Employee Data</h4>
+    <form action="/insert" method="post">
+      <div class="row">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control"  id="name" aria-describedby="emailHelp"
+            placeholder="Name" name="name" value={{data.name}}>
+          {{#if errorMessage.name}}
+          <p class="text-danger">{{errorMessage.name}}</p>
+          {{/if}}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="dsg" class="form-label">Dsg</label>
+          <input type="text" class="form-control"  id="dsg" aria-describedby="emailHelp"
+            placeholder="Dsg" name="dsg" value={{data.dsg}}>
+          {{#if errorMessage.dsg}}
+          <p class="text-danger">{{errorMessage.dsg}}</p>
+          {{/if}}
+        </div>
+
+
+        <div class=" col-md-6 mb-3">
+          <label for="phone" class="form-label">Phone</label>
+          <input type="number" class="form-control" value={{data.phone}} id="phone" aria-describedby="emailHelp"
+            placeholder="Phone" name="phone">
+          {{#if errorMessage.phone}}
+          <p class="text-danger">{{errorMessage.phone}}</p>
+          {{/if}}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class=" col-md-6 mb-3">
+          <label for="salary" class="form-label">Salary</label>
+          <input type="number" class="form-control" value={{data.salary}} id="salary" aria-describedby="emailHelp"
+            placeholder="Salary" name="salary">
+          {{#if errorMessage.salary}}
+          <p class="text-danger">{{errorMessage.salary}}</p>
+          {{/if}}
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label for="city" class="form-label">City</label>
+          <input type="text" class="form-control"  id="city" aria-describedby="emailHelp"
+            placeholder="City" name="city" value={{data.city}}>
+          {{#if errorMessage.city}}
+          <p class="text-danger">{{errorMessage.city}}</p>
+          {{/if}}
+        </div>
+      </div>
+
+      <div class=" row">
+
+        <div class="col-md-6 mb-3">
+          <label for="state" class="form-label">State</label>
+          <input type="text" class="form-control"  id="state" aria-describedby="emailHelp"
+            placeholder="State" name="state"value={{data.state}}>
+          {{#if errorMessage.state}}
+          <p class="text-danger">{{errorMessage.state}}</p>
+          {{/if}}
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="string" class="form-control" id="email" aria-describedby="emailHelp" 
+            placeholder="email" name="email" value={{data.email}}>
+          {{#if errorMessage.email}}
+          <p class="text-danger">{{errorMessage.email}}</p>
+          {{/if}}
+        </div>
+      </div>
+
+      <div class="col-md-12 mb-3 d-flex justify-content-center">
+        <button type="submit" class="btn bg-dark text-warning ">Submit</button>
+      </div>
+
+
+    </form>
+  </div>
+</body>
+
+{{>Footer}}
+
+</html>

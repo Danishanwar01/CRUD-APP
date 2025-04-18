@@ -1,0 +1,11 @@
+
+.background
+{
+    background-color: violet;
+}
+
+.mid-section
+{
+   height: 640px;
+   overflow: auto;
+}

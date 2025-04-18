@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD APP</title>
+    {{>Header}}
+</head>
+<body>
+    {{>Nav}}
+    <h2 class=" bg-dark text-warning text-center mt-2 p-1">Home page</h2>
+
+     <div class="container mid-section ">
+       <table class="table table-bordered border border-2 border-dark text-danger table-hover">
+  <thead class="text-warning">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col ">Name</th>
+      <th scope="col">Designation</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Salary</th>
+      <th scope="col">City</th>
+      <th scope="col">State</th>
+      <th scope="col">Email</th>
+      <th scope="col">Update</th>
+       <th scope="col">Delete</th>
+    </tr>
+  </thead>
+ <tbody>
+  {{#each data}}
+     <tr>
+        <td>{{_id}}</td>
+        <td>{{name}}</td>
+        <td>{{dsg}}</td>
+        <td>{{phone}}</td>
+        <td>{{salary}}</td>
+        <td>{{city}}</td>
+        <td>{{state}}</td>
+        <td>{{email}}</td>
+        <td><a href="/edit/{{_id}}" class="text-info">Edit</a></td>
+        <td><a href="/delete/{{_id}}" class="text-info">Delete</a></td>
+     </tr>
+  {{/each}}
+</tbody>
+</table>
+     </div>
+
+    {{>Footer}}
+</body>
+</html>
